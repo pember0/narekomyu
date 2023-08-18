@@ -13,8 +13,8 @@
         </div>
 
         <div class="row">
-          <!-- btn-infoは、水色、mb-3でボタンの下側に余白を指定する-->
-          <a class="btn btn-info btn-sm btn-block mb-3 sign_in" href="/users/sign_in">ゲストログイン</a>
+          <!-- ゲストログインボタン設定 -->
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in", method: :post %>
         </div>
 
         <div class="row">

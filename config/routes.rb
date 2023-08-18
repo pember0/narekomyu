@@ -2,21 +2,26 @@ Rails.application.routes.draw do
   root to: "homes#top"              # Topページを設定
   devise_for :users
 
-  get 'likes/new'
-  get 'likes/create'
-  get 'likes/destroy'
-  get 'comments/new'
-  get 'comments/create'
-  get 'comments/destroy'
-  get 'posts/new'
-  get 'posts/create'
-  get 'posts/index'
-  get 'posts/show'
-  get 'posts/edit'
-  get 'posts/update'
-  get 'posts/destroy'
+  # ゲストユーザー設定
+  devise_scope :user do
+    post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
+  end
 
+  # 投稿の設定
+  resources :posts, only: [:new, :index,:show,:edit,:create,:destroy,:update] do
+    # いいね機能のルーティングを設定
+    resource :likes, only: [:create, :destroy]
+    # コメント機能のルーティングを設定
+    resources :comments, only: [:create, :destroy]
+  end
 
-  resources :users, only: [:index, :show, :edit, :update]
+  # 会員の設定
+  resources :users, only: [:index, :show, :edit, :update, :destroy] do
+    member do
+      get 'likes'
+    end
+    collection do
+    end
+  end
 
 end

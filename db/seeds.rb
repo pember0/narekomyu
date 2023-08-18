@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#管理者のダミーアカウントを生成
+#users= [
+#{ name: 'sample3', email: 'sample3@example.com', password: '000000' },
+#{ name: 'sample4', email: 'sample4@example.com', password: '000000' },
+#{ name: '管理者', email: 'admin@example.com', password: '000000', introduction: '管理者アカウント', is_administrator: true }
+#]
+#users.each do |record|
+# User.create!(record) unless User.find_by(email: record[:email])
+#end
+
+#タグの登録
+#tags= [
+#{ tag_name: 'code' },
+#{ tag_name: 'SQL' }
+#]
+#tags.each do |record|
+# Tag.create!(record) unless Tag.find_by(tag_name: record[:tag_name])
+#end

@@ -11,6 +11,47 @@
 
           <!-- ログイン状態の場合 -->
           <% if user_signed_in? %>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <!-- Homeのリンク -->
+              <li class="nav-item text-light">
+                <%= link_to user_path(current_user), class: 'nav-link text-light' do %>
+                  <i class="fas fa-home"></i>
+                    <span>Home</span>
+                <% end %>
+              </li>
+
+              <!-- 投稿のリンク -->
+              <li class="nav-item text-light">
+                <%=  link_to new_post_path, class: 'nav-link text-light' do %>
+                  <i class="fas fa-book-open"></i>
+                  <span>投稿</span>
+                <% end %>
+              </li>
+
+              <!-- 投稿一覧のリンク -->
+              <li class="nav-item text-ligh">
+                <%=  link_to posts_path , class: 'nav-link text-light' do %>
+                  <i class="fas fa-book-open"></i>
+                  <span>投稿一覧</span>
+                <% end %>
+              </li>
+
+              <!-- 「いいね」投稿一覧のリンク -->
+              <li class="nav-item text-ligh">
+                <%=  link_to likes_user_path(current_user), class: 'nav-link text-light' do %>
+                  <i class="fas fa-book-open"></i>
+                  <span>「いいね」投稿一覧</span>
+                <% end %>
+              </li>
+
+              <!-- Usersのリンク -->
+              <li class="nav-item text-light">
+                <%=  link_to users_path, class: 'nav-link text-light' do %>
+                  <i class="fas fa-users"></i>
+                  <span>会員一覧</span>
+                <% end %>
+              </li>
+
               <!-- Log outのリンク -->
               <li class="nav-item text-light">
                 <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>

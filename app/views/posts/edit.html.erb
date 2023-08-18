@@ -1,2 +1,24 @@
 <h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <!--更新画面-->
+  		<h1>投稿内容編集</h1>
+  		<!--バリデーションによるエラーメッセージ設定 -->
+      <% if @post.errors.any? %>
+        <%= @post.errors.count %>error prohibited this obj from being saved:
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+  		<%= render 'form', post: @post %>
+
+  		<!--詳細画面のリンク -->
+      <%= link_to "Show", post_path(@post.id) %>
+      <a> | </a>
+      <!--一覧画面のリンク -->
+      <%= link_to "Back", posts_path %>
+  </div>
+</div>
