@@ -9,10 +9,10 @@ class User < ApplicationRecord
 
   # # dependent: :destroyは、has_manyで使えるオプションです。 1:Nの関係において、
   # 「1」のデータが削除された場合、関連する「N」のデータも削除される設定
-  has_many :posts, dependent: :destroy          # 投稿機能
-  has_many :likes, dependent: :destroy          # いいね機能
+  has_many :posts, dependent: :destroy                      # 投稿機能
+  has_many :likes, dependent: :destroy                      # いいね機能
   has_many :like_posts, through: :likes, source: :post
-  has_many :comments, dependent: :destroy       # コメント機能
+  has_many :comments, dependent: :destroy                   # コメント機能
 
   # ActiveStorageでプロフィール画像を保存できるように設定
   has_one_attached :profile_image

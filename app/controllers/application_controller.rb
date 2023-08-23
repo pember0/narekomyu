@@ -11,11 +11,11 @@ class ApplicationController < ActionController::Base
   end
 
   # サインアウト後にどこに遷移するかを設定するメソッド、Topページへ遷移
-  def after_sign_out_path_for(resource)
+  # def after_sign_out_path_for(resource)
     # ユーザログアウトが成功したとき:フラッシュメッセージ
-    flash[:notice] = "Signed out successfully."
-    root_path
-  end
+    # flash[:notice] = "Signed out successfully."
+  #   root_path
+  # end
 
   # protectedは呼び出された他のコントローラからも参照することが可能
   protected

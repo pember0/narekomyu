@@ -35,7 +35,7 @@
 
       <div class="form-group">
         <!-- Update Userボタン  -->
-        <%= f.submit class: 'btn btn-secondary' %>
+        <%= f.submit '更新', class: 'btn btn-info' %>
 
         <!-- 退会ボタン  -->
         <%= link_to "退会する", user_path(@user.id), class: "btn btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %>

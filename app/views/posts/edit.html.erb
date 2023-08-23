@@ -1,7 +1,6 @@
-<h1>Posts#edit</h1>
 <div class='container'>
   <div class='row'>
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <div class="col-sm-12 col-lg-10 px-5 px-sm-0 mx-auto">
       <!--更新画面-->
   		<h1>投稿内容編集</h1>
   		<!--バリデーションによるエラーメッセージ設定 -->
@@ -13,6 +12,8 @@
           <% end %>
         </ul>
       <% end %>
+
+      <!--投稿情報 -->
   		<%= render 'form', post: @post %>
 
   		<!--詳細画面のリンク -->

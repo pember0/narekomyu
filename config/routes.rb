@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end
 
+  get 'tag_search', to: 'posts#tag_search'
+  resources :searches, only: [:index]
+
   # 投稿の設定
   resources :posts, only: [:new, :index,:show,:edit,:create,:destroy,:update] do
     # いいね機能のルーティングを設定

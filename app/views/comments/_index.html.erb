@@ -1,20 +1,20 @@
-<table>
-  <tbody>
-    <% post.comments.each do |comment| %>
-    <tr>
-      <td>
+<% post.comments.each do |comment| %>
+  <div class="mb-2 p-3 border bg-white">
+    <div class="row">
+      <div class="col-md-3">
         <%= link_to user_path(comment.user) do %>
           <%= image_tag comment.user.get_profile_image(50,50) %><br>
           <%= comment.user.name %>
         <% end %>
-      </td>
-      <td><%= comment.comment %></td>
-      <td>
-        <% if comment.user == current_user || current_user.is_administrator? %>
-          <%= link_to "Destroy", post_comment_path(post, comment), method: :delete, class: "btn btn-sm btn-danger float-end", remote: true %>
-        <% end %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+      <div class="col-md-9">
+        <pre><%= comment.comment %></pre>
+        <div class="text-right">
+          <% if comment.user == current_user || current_user.is_administrator? %>
+            <%= link_to "Destroy", post_comment_path(post, comment), method: :delete, class: "btn btn-sm btn-danger float-end", remote: true %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
