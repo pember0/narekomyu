@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   # バリデーション設定
   validates :title,presence:true                                  # タイトル
   validates :question_content,presence:true,length:{maximum:2000} # 質問内容
-  validates :tag, presence: true                                  # タグ
+  validates :tag_id, presence: true                               # タグ
 
 
   # 1:N の「1」側にあたるモデルに、has_many を記載

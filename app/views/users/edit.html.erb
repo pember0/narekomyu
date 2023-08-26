@@ -1,35 +1,25 @@
-<!--バリデーションによるエラーメッセージ設定 -->
-<% if @user.errors.any? %>
-  <%= @user.errors.count %>error prohibited this obj from being saved:
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-    <h2>User info</h2>
+    <h2>会員情報</h2>
 
     <%= form_with model:@user, local:true do |f| %>
       <!-- User info -->
       <%= render 'layouts/errors', obj: @user %>
       <div class="form-group">
-        <%= f.label :name %>
+        <%= f.label :ユーザー名, class: 'font-weight-bold'%>
         <%= f.text_field :name, class: "form-control name" %>
       </div>
 
       <!-- Image -->
       <div class="form-group">
-        <%= f.label :profile_image %>
+        <%= f.label :profile_image, class: 'font-weight-bold' %>
         <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
        </div>
 
       <!-- Introduction -->
       <div class="form-group">
-        <%= f.label :introduction %>
+        <%= f.label :紹介文, class: 'font-weight-bold' %>
         <%= f.text_area :introduction, class: "form-control introduction" %>
       </div>
 

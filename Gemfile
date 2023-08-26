@@ -64,3 +64,8 @@ end
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
+
+# ページネーション機能
+gem 'kaminari','~> 1.2.1'
+
+gem 'bootstrap4-kaminari-views'

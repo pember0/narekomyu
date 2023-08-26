@@ -25,7 +25,9 @@ Knowledge Community（ナレッジコミュニティー）を略して「ナレ�
 * チーム開発などのプロジェクト内メンバー同士で問題・解決方法の情報共有を行いたい時
 
 ## 設計書
-後ほど作成予定
+* ER図：https://drive.google.com/file/d/1WrqXB52lsMiF_fpoLa0yefPslHjuFbxe/view?usp=sharing
+* テーブル提議書：https://docs.google.com/spreadsheets/d/1KOQQSlk6R9V9yWBq2ngdPrRdt4Si0hgbAVgqZt4yBYU/edit?usp=sharing
+* 画面遷移図：https://drive.google.com/file/d/1HJU_QN4NoAbfVwmeTTenj3SACBicFav1/view?usp=sharing
 
 ## 開発環境
 * OS：Windows11

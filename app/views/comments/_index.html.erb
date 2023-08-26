@@ -7,11 +7,12 @@
           <%= comment.user.name %>
         <% end %>
       </div>
+
       <div class="col-md-9">
         <pre><%= comment.comment %></pre>
         <div class="text-right">
           <% if comment.user == current_user || current_user.is_administrator? %>
-            <%= link_to "Destroy", post_comment_path(post, comment), method: :delete, class: "btn btn-sm btn-danger float-end", remote: true %>
+            <%= link_to "削除", post_comment_path(post, comment), method: :delete, class: "btn btn-sm btn-danger float-end", remote: true %>
           <% end %>
         </div>
       </div>

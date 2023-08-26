@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc).page(params[:page])
   end
 
   # 作成データの保存
@@ -23,11 +23,10 @@ class PostsController < ApplicationController
     # バリデーション設定
     if @post.save
       # 新規投稿が成功したとき:フラッシュメッセージ
-      flash[:notice] = "You have created post successfully."
+      flash[:notice] = "投稿の作成に成功しました。"
       redirect_to post_path(@post.id)
     else
-      @posts = Post.all
-      render :index
+      render "new"
     end
   end
 
@@ -43,7 +42,7 @@ class PostsController < ApplicationController
     # バリデーション設定
     if @post.update(post_params)      # Postのアップデート
       # 投稿の更新が成功したとき:フラッシュメッセージ
-      flash[:notice] = "You have updated post successfully."
+      flash[:notice] = "更新に成功しました。"
        redirect_to post_path(@post.id)   # postの詳細ページへのパス
     else
       render "edit"

@@ -1,16 +1,18 @@
 <%= form_with model: @post, local:true do |f| %>
   <div class="form-group">
-    <%= f.label :Title %>
+    <%= f.label :タイトル, class: 'font-weight-bold' %>
     <%= f.text_field :title, class: 'form-control post_title' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :Question_content %>
+    <%= f.label :質問内容, class: 'font-weight-bold' %>
     <%= f.text_area :question_content, rows: 10, class: 'form-control post_question_content' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :tag_id %>
+    <div>
+      <%= f.label :タグ, class: 'font-weight-bold' %>
+    </div>
     <%= f.select :tag_id, options_from_collection_for_select( Tag.all, :id, :tag_name), {prompt: "選択して下さい"}, {class: "form-item", id: "last_name"} %>
   </div>
 

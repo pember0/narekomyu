@@ -38,8 +38,8 @@
           </div>
 		      <% if @post.user == current_user || current_user.is_administrator? %>
   		      <div class="mt-3 text-right">
-              <%= link_to "Edit", edit_post_path(@post.id), class: 'btn btn-info btn-sm' unless current_user.is_administrator? %>
-              <%= link_to "Destroy", post_path(@post.id), method: :delete, class: 'btn btn-danger btn-sm', "data-confirm" => "本当に削除しますか？" %>
+              <%= link_to "編集", edit_post_path(@post.id), class: 'btn btn-info btn-sm' unless current_user.is_administrator? %>
+              <%= link_to "削除", post_path(@post.id), method: :delete, class: 'btn btn-danger btn-sm', "data-confirm" => "本当に削除しますか？" %>
             </div>
           <% end %>
   		  </div>

@@ -5,7 +5,7 @@
   		<h1>投稿内容編集</h1>
   		<!--バリデーションによるエラーメッセージ設定 -->
       <% if @post.errors.any? %>
-        <%= @post.errors.count %>error prohibited this obj from being saved:
+        <%= @post.errors.count %>件 エラーが発生しました。
         <ul>
           <% @post.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -17,9 +17,7 @@
   		<%= render 'form', post: @post %>
 
   		<!--詳細画面のリンク -->
-      <%= link_to "Show", post_path(@post.id) %>
-      <a> | </a>
-      <!--一覧画面のリンク -->
-      <%= link_to "Back", posts_path %>
+      <%= link_to "戻る", post_path(@post.id) %>
+
   </div>
 </div>

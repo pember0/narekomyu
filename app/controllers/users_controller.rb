@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def show
     #データ（レコード）を1件取得
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.order(created_at: :desc).page(params[:page])
     @post = Post.new
   end
 
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
   def likes
     @user = User.find(params[:id])
-    @posts = @user.like_posts
+    @posts = @user.like_posts.order(created_at: :desc).page(params[:page])
     likes = Like.where(user_id: @user.id).pluck(:post_id)
     @like_posts = Post.find(likes)
   end

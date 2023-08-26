@@ -12,7 +12,7 @@
   </table>
 
   <div class="d-flex">
-    <% if current_user.is_administrator || current_user == user %>
+    <% if current_user == user %>
       <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
         <i class="fas fa-user-cog"></i>
       <% end %>
@@ -24,7 +24,7 @@
   <div class="mt-5 border" style="background-color: white;">
     <!-- Tag Lists -->
     <ul>
-      <h2>Tag Lists</h2>
+      <h2>タグリスト</h2>
       <% Tag.all.each do |tag| %>
       <li><%= link_to tag.tag_name, tag_search_path(id: tag.id) %></li>
       <% end %>
