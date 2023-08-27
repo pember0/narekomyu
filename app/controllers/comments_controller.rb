@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
   def destroy
     Comment.find(params[:id]).destroy
     @post = Post.find(params[:post_id])
+    @comment = Comment.new    # コメントのバリデーションのための設定
   end
 
   private
