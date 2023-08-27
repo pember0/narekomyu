@@ -11,6 +11,7 @@ users= [
 #{ name: 'sample3', email: 'sample3@example.com', password: '000000' },
 #{ name: 'sample4', email: 'sample4@example.com', password: '000000' },
 #{ name: '管理者', email: 'admin@example.com', password: '000000', introduction: '管理者アカウント', is_administrator: true }
+{ name: 'admin', email: 'admin1@example.com', password: '000000', introduction: '管理者アカウント', is_administrator: true }
 ]
 users.each do |record|
  User.create!(record) unless User.find_by(email: record[:email])
