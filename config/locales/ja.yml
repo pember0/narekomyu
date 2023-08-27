@@ -5,6 +5,8 @@ ja:
       post:
         title: タイトル
         question_content: 質問内容
+      comment:
+        comment: コメント
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

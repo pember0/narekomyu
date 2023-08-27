@@ -1,3 +1,13 @@
+<!--バリデーションによるエラーメッセージ設定 -->
+<% if @comment.errors.any? %>
+  <%= @comment.errors.count %>件 エラーが発生しました。
+  <ul>
+    <% @comment.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <% post.comments.each do |comment| %>
   <div class="mb-2 p-3 border bg-white">
     <div class="row">

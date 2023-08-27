@@ -58,6 +58,8 @@ class PostsController < ApplicationController
   def tag_search
     tag = Tag.find(params[:id])
     @posts = tag.posts
+    # ページャのページ総数の設定追加
+    @posts = @posts.page(params[:page]).per(10)
     render :index
   end
 
