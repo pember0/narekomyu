@@ -28,6 +28,7 @@ Knowledge Community（ナレッジコミュニティー）を略して「ナレ�
 * ER図：https://drive.google.com/file/d/1WrqXB52lsMiF_fpoLa0yefPslHjuFbxe/view?usp=sharing
 * テーブル提議書：https://docs.google.com/spreadsheets/d/1KOQQSlk6R9V9yWBq2ngdPrRdt4Si0hgbAVgqZt4yBYU/edit?usp=sharing
 * 画面遷移図：https://drive.google.com/file/d/1HJU_QN4NoAbfVwmeTTenj3SACBicFav1/view?usp=sharing
+* アプリケーション詳細設計書：https://docs.google.com/spreadsheets/d/1KAOfmDtAkWJcG2ouIdX3pcLy_IDqi0uujSsfliMY8fs/edit?usp=sharing
 
 ## 開発環境
 * OS：Windows11
