@@ -5,13 +5,18 @@
       <!-- ナレコミュのリンク -->
       <%= link_to "ナレコミュ", root_path, class: "navbar-brand" %>
 
+      <!-- ハンバーガーメニュー -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
       <!-- ナビゲーションバー -->
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
-
           <!-- ログイン状態の場合 -->
           <% if user_signed_in? %>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
               <!-- Homeのリンク -->
               <li class="nav-item text-light">
                 <%= link_to user_path(current_user), class: 'nav-link text-light' do %>
