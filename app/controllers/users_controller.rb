@@ -6,13 +6,11 @@ class UsersController < ApplicationController
     #データ（レコード）を1件取得
     @user = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc).page(params[:page])
-    @post = Post.new
   end
 
   def index
     @user= current_user
     @users = User.where(is_deleted: false)  # 退会していないユーザを全て取得
-    @post = Post.new
   end
 
   def edit
