@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @posts =Post.new
     @user=@post.user
     @comment = Comment.new  # コメント機能用
   end
