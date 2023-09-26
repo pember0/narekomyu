@@ -14,7 +14,6 @@
             </div>
           </div>
           <div class="col-md-9">
-
             <div class="card-body">
               <h6 class="font-weight-bold">タイトル</h6>
               <h5 class="card-title">
@@ -36,11 +35,17 @@
         </div>
 
         <div class="card-footer text-right">
+          <div>
+            <!-- 投稿日時 -->
+            投稿日時：<%= l post.created_at, format: :short %>
+          </div>
           <div id="like_btn_<%= post.id %>">
+            <!-- いいね -->
             <%= render "likes/btn", post: post %>
           </div>
           <div>
             <small class="text-black-50">
+              <!-- コメント数 -->
               コメント数：<%= post.comments.count %>
             </small>
           </div>

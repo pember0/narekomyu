@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def index
     @user= current_user
-    @users = User.where(is_deleted: false)  # 退会していないユーザを全て取得
+    @users = User.where(is_deleted: false).order(created_at: "DESC")  # 退会していないユーザを全て取得、降順表示
   end
 
   def edit
