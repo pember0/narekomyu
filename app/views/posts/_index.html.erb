@@ -1,5 +1,5 @@
 <div class="row">
-  <% @posts.each do |post| %>
+  <% posts.each do |post| %>
     <div class="col-md-12 mb-3">
       <div class="card">
         <div class="row">
@@ -30,7 +30,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -53,5 +52,5 @@
       </div>
     </div>
   <% end %>
-  <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
+  <%= paginate posts, theme: 'twitter-bootstrap-4' %>
 </div>

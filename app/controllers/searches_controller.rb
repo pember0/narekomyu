@@ -7,5 +7,4 @@ class SearchesController < ApplicationController
     @posts = @posts.page(params[:page]).per(10)
     render 'posts/index'
   end
-
 end
